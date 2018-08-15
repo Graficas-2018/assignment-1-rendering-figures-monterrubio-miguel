@@ -237,7 +237,7 @@ function createSphere(gl, radius)
     ];
 
     //crea el círculo. hay un punto colocado por cada grado en el círculo.
-    for (var i = 0; i <= 360; i++) 
+    for (var i = 45; i <= 315; i++) 
     {
     	verts.push(radius * Math.cos(i * Math.PI / 180));
     	verts.push(radius * Math.sin(i * Math.PI / 180));
@@ -246,6 +246,6 @@ function createSphere(gl, radius)
     
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(verts), gl.STATIC_DRAW);
 
-    var sphere = {buffer:vertexBuffer, vertSize:3, nVerts:362, primtype:gl.TRIANGLE_FAN};
+    var sphere = {buffer:vertexBuffer, vertSize:3, nVerts:272, primtype:gl.TRIANGLE_FAN};
     return sphere;
 }        

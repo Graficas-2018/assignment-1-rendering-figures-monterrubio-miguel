@@ -19,7 +19,7 @@ var vertexShaderSource =
 var fragmentShaderSource = 
     "    void main(void) {\n" +
     "    // Return the pixel color: always output white\n" +
-    "    gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);\n" +
+    "    gl_FragColor = vec4(1.0, 0.0, 0.0, 0.9);\n" +
     "}\n";
 
 var shaderProgram, shaderVertexPositionAttribute, shaderProjectionMatrixUniform, shaderModelViewMatrixUniform;
@@ -93,7 +93,7 @@ function initShader(gl)
 function initGL(gl, canvas)
 {
     // clear the background (with black)
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+    gl.clearColor(0.0, 1.0, 0.2, 1.0);
 
     // Clears the color buffer; the area in GPU memory used to render the bits on screen.
     // There are several buffers, including the color, and depth buffers.

@@ -19,7 +19,7 @@ var vertexShaderSource =
 var fragmentShaderSource = 
     "    void main(void) {\n" +
     "    // Return the pixel color: always output white\n" +
-    "    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);\n" +
+    "    gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);\n" +
     "}\n";
 
 var shaderProgram, shaderVertexPositionAttribute, shaderProjectionMatrixUniform, shaderModelViewMatrixUniform;
@@ -29,6 +29,7 @@ function initWebGL(canvas)
 {
 
     var gl = null;
+
     var msg = "Your browser does not support WebGL, or it is not enabled by default.";
 
     try 
@@ -220,13 +221,14 @@ function createRhombus(gl)
 
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(verts), gl.STATIC_DRAW);
 
+
     var rhombus = {buffer:vertexBuffer, vertSize:3, nVerts:4, primtype:gl.TRIANGLE_STRIP};
     return rhombus;
 }
 
 function createSphere(gl, radius)
 {
-
+	//used https://gist.github.com/linusthe3rd/803118 for help
     var vertexBuffer;
     vertexBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
